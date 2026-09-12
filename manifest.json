@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Fill Microsoft Form",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting"],
+  "action": {
+    "default_title": "Fill Microsoft Form"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "type": "module"
+}
